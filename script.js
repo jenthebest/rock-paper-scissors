@@ -1,17 +1,11 @@
 var result = document.getElementById("result");
-var rpsInput;
+var rpsInput = document.getElementById("rpsInput");
 var userChoice;
 var computerChoice;
+var computer = document.getElementById("computer");
 
-window.onload = function() {
-	// reference to button using button's id
-	var playButton = document.getElementById("playButton");
-	playButton.onclick = handlePlayButton;
-}
 
-function handlePlayButton() {
-	// code to get the value from the form
-	rpsInput = document.getElementById("rpsInput");
+document.getElementById("playButton").onclick = function() {
 	userChoice = rpsInput.value.toLowerCase();
 	
 	computerChoice = Math.random();
@@ -24,11 +18,8 @@ function handlePlayButton() {
 	}
 
 	compare(userChoice, computerChoice);
-	var computer = document.getElementById("computer");
 	computer.innerHTML = "The computer chooses " + computerChoice;
 }
-
-
 
 function compare(choice1, choice2) {
 	if (choice1 === choice2) {
